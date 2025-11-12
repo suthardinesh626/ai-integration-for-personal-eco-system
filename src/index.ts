@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -73,7 +74,7 @@ interface ForecastResponse {
 }
 
 const server = new McpServer({
-  name: "weather",
+  name: "my-custom-weather",
   version: "1.0.0",
   capabilities: {
     resources: {},
