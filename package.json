@@ -5,8 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "nodemon ./src/index.js"
+    "start": "node ./src/index.ts",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc && chmod 755 build/index.js"
+  },
+  "bin": {
+    "weather": "./build/index.js"
   },
   "keywords": [
     "assistant",
@@ -18,12 +22,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.21.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@types/node": "^24.10.0",
     "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
   }
 }
